@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<script type="text/javascript">
+	var _hmt=_hmt||[];
+	(function(){
+		var hm=document.createElement("script");
+		hm.src="https://hm.baidu.com/hm.js?01bef1dcf462afdf3af22cdebb812c02";
+		var s=document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm,s);
+	})();
+</script>
+
+
+<head>
+<meta charset='UTF-8'>
+<meta name='keywords' content='在线批量替换,多对多批量替换,批量替换不同内容,文本替换,批量替换工具,文档批量处理'>
+<meta name='description' content='excel批量替换不同内容,excel怎么替换数据,excel替换,替换通配符,经常用得到的文本替换,批量文本替换器,文本替换怎么用,批量替换软件,shell批量替换,多对多批量替换,excel批量替换,word文档批量处理'>
+<title>在线文本工具-程序员在线工具</title>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' >
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' ><!--增加IE的兼容性-->
+<meta name='viewport' content='width=device-width, initial-scale=1.0'><!--自动适应手机屏幕-->
+<meta name='author' content='imaster'>
+<link rel='icon' href='img/logo3.ico' type='image/x-icon' >
+<link href='css/mycss.css' type='text/css' rel='stylesheet'>
+<link href='css/style.css' type='text/css' rel='stylesheet'>
+<script type='text/javascript' src='js/clipboard.js'></script>
+<script type='text/javascript' src='js/myfunc.js'></script>
+<script type='text/javascript' src='js/jquery.min.js'></script>
+<script type='text/javascript' src='js/style.js'></script>
+<nav>
+<ul>
+<div class='nav_shake'>
+	<ul class='nav_shake_table'>
+		<li class='nav_shake_table_cell'>
+			<a href='index.html' class='nav_shake_table_cell_link'>
+				<span class='shake'>文本整理器</span>
+			</a>
+<!-- 			</li>
+		<li class='nav_shake_table_cell'>
+			<a href='text_contrast.html' class='nav_shake_table_cell_link'>
+				<span class='shake'>文本对比</span>
+			</a>
+		</li>-->
+		<li class='nav_shake_table_cell'>
+			<a href='piliangtihuan.html' class='nav_shake_table_cell_link'>
+				<span class='shake'>批量替换</span>
+			</a>
+		</li>
+	</ul>
+</div>
+</ul>
+</nav>
+</head>
+
+
+	<body class="body_color">
+	<p id="batrp" class="index">批量替换</p>
+	<div class="qr_code"><img src="/img/wbzl.png" /></div>
+	<form style="margin:10px 10px 10px 160px">
+	
+	<div class="div_txt">
+	<textarea id="org_data" class="txtarea_br txtarea_br1"  autofocus rows=15 placeholder="请输入原数据">有一美人兮，见之不忘。
+一日不见兮，思之如狂。
+凤飞翱翔兮，四海求凰。
+无奈佳人兮，不在东墙。
+将琴代语兮，聊写衷肠。
+何日见许兮，慰我彷徨。
+愿言配德兮，携手相将。
+不得於飞兮，使我沦亡。
+
+By 司马相如
+To 卓文君
+
+</textarea>
+	<textarea id="rped_data" class="txtarea_br txtarea_br2"  rows=15 placeholder="显示替换后数据"></textarea><br>
+	</div>
+	<p id="tip" class="bat_rp">查找和替换内容默认“-”分开，上下关键词数量一一对应，如关键词含有分隔符，请在选择其他分隔符</p>
+	<table align="center">
+	<tr align="center">
+	
+	<td width="430" align="left">	
+	<table align="left" width="100%" height="100%"  border="0">	
+	<tr><td>查找内容：
+	<textarea id="old_keyw" class="keyw old_keyw"  rows=1 placeholder="查找内容，用选中的分隔符隔开，如a-b-c">美人-兮-不忘-By-to</textarea></td></tr>
+	<tr><td>&nbsp;&nbsp;&nbsp;替换为：
+	<textarea id="new_keyw" class="keyw new_keyw"  rows=1 placeholder="替换的新内容，用选中的分隔符隔开，如1-2-3">靓女-啊-难以忘怀-作者-致</textarea></td></tr>
+	</table>
+	
+	</td>
+	
+	<td width="50"><input type="radio" name="dot" value="-" id="hg" checked="checked" />- <br>
+		<input type="radio" name="dot" value="--" />--</td>
+	<td width="50"><input type="radio" name="dot" value="/" />/<br>
+		<input type="radio" name="dot" value="|" />|</td></td>
+	<td width="150"><input type="radio" name="case" value="y" checked="checked" /><span>区分大小写&nbsp;&nbsp;&nbsp;</span><br>
+		<input type="radio" name="case" value="n" />不区分大小写</td></td>
+	<td width="70" align="left"><input type="radio" name="pattern" id="p1" value="p1" checked="checked" /><span>模式一&nbsp;&nbsp;&nbsp;</span><br>
+		<input type="radio" name="pattern" id="p2" value="p2" />模式二</td></td>	
+	
+	<td width="120"><button type="button" id="start_rp" class="button blue">开始替换</button></td>	
+	<td><button type="button" id="copy" data-clipboard-action="copy" data-clipboard-target="#rped_data" class="button blue">复制结果
+	</button></td>
+	<td width="100"><button type="button" id="clear" class="button rosy">清空</button></td>
+	</tr>
+	</table>
+	<div align="center">
+	<br />
+	<p>★阿里云代金券礼包★<a style="color: #20B2AA;" target="_blank" href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=hr1e1dea">戳我领取</a></p>
+	</div>	
+	</form>
+	
+	
+	<script type="text/javascript" src="js/batrp.js"></script>
+	
+	<!--	<div id="container">
+		<div id="header"></div>
+		<div id="page" class="clearfix">
+		<div id="left"></div>
+		<div id="content">© CopyRight 2018-2028, QQTOOL.XYZ, All Rights Reserved.</div>
+		<div id="right"><a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">粤ICP备18056198号-1</a></div>
+		</div>
+		<div id="footer"></div>
+		</div>
+	-->
+	</body>
+	</html>
