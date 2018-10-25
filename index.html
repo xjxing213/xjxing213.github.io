@@ -1,1 +1,134 @@
-hello world
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<script type="text/javascript">
+	var _hmt=_hmt||[];
+	(function(){
+		var hm=document.createElement("script");
+		hm.src="https://hm.baidu.com/hm.js?01bef1dcf462afdf3af22cdebb812c02";
+		var s=document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm,s);
+	})();
+</script>
+
+
+<head>
+<meta charset='UTF-8'>
+<meta name='keywords' content='在线工具,QQ工具,排版工具,排版,i排版,文本整理,字符串处理,文本处理,数据整理,数据处理,在线去重复文本工具'>
+<meta name='description' content='删除文档中的多余空格,英文作文中删除空格,word删除空格,删除文章中所有空格,怎样删除文档中的空行,word如何删除空行,如何删除空行,word如何批量删除空行'>
+<title>在线文本整理器-排版工具</title>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' >
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' ><!--增加IE的兼容性-->
+<meta name='viewport' content='width=device-width, initial-scale=1.0'><!--自动适应手机屏幕-->
+<meta name='author' content='imaster'>
+<link rel='icon' href='img/logo3.ico' type='image/x-icon' >
+<link href='css/mycss.css' type='text/css' rel='stylesheet'>
+<link href='css/style.css' type='text/css' rel='stylesheet'>
+<script type='text/javascript' src='js/clipboard.js'></script>
+<script type='text/javascript' src='js/myfunc.js'></script>
+<script type='text/javascript' src='js/jquery.min.js'></script>
+<script type='text/javascript' src='js/style.js'></script>
+<nav>
+<ul>
+<div class='nav_shake'>
+	<ul class='nav_shake_table'>
+		<li class='nav_shake_table_cell'>
+			<a href='index.html' class='nav_shake_table_cell_link'>
+				<span class='shake'>文本整理器</span>
+			</a>
+<!-- 			</li>
+		<li class='nav_shake_table_cell'>
+			<a href='text_contrast.html' class='nav_shake_table_cell_link'>
+				<span class='shake'>文本对比</span>
+			</a>
+		</li>-->
+		<li class='nav_shake_table_cell'>
+			<a href='piliangtihuan.html' class='nav_shake_table_cell_link'>
+				<span class='shake'>批量替换</span>
+			</a>
+		</li>
+	</ul>
+</div>
+</ul>
+</nav>
+</head>
+
+
+<body class="body_color">
+	<p id="str_count" class="index">字数统计</p>
+	<div class="qr_code"><img src="/img/wbzl.png" /></div>
+<div align="center">
+<form>
+	<textarea id="txtarea" class="txtarea_index" autofocus rows=15 cols=120>
+
+温馨提示：鼠标移到带*号的按钮上上显示使用帮助提示。
+
+鼠标移动到右上角二维码放大，微信扫描打開小程序《文本整理器》。
+
+請在此輸入-文本-文本-內容
+請在此輸入-文本-文本-內容
+
+如功能异常，请删除缓存后重新打开本网站</textarea><br>
+	<table align="center">
+	<tr align="center" border="1">			
+	<td><button type="button" id="clear" class="button rosy">清空</button></td>
+	<td><button type="button" id="copy" data-clipboard-action="copy" data-clipboard-target="#txtarea" class="button rosy">复制</button></td>
+	<td><button type="button" id="one_click" class="button green" title="删除所有空格空行，且每个段落前面添加4个英文空格"><u>一键排版</u></button></td>
+	<td><button type="button" id="kaifaing" class="button green">开发中</button></td>
+	<td><button type="button" id="all_trim" class="button orange">删除所有空格</button></td>
+	<td><button type="button" id="head_tail_trim" class="button orange">删除首尾空格</button></td>
+	<td><button type="button" id="del_lines" class="button blue">删除空行</button></td>
+	<td><button type="button" id="add_lines" class="button blue">添加空行</button></td></td>
+	</tr>
+	<tr align="center">
+	<td><button type="button" id="del_dup_para" class="button rosy" title="删除重复的行（即段落）">删除重复段落*</button></td>
+	<td><button type="button" id="del_dup_items" class="button rosy" title="内容为a-a-b输入分隔符-后变为a,b。把重复项a去重了">删除重复内容*
+	</button></td>
+	<td><button type="button" id="del_odd_para" class="button green" title="删除奇数的段落">删除奇数行*</button></td>
+	<td><button type="button" id="del_even_para" class="button green" title="删除偶数的段落">删除偶数行*</button></td>
+	<td><button type="button" id="join_para" class="button orange">合并段落</button></td>
+	<td><button type="button" id="str2lines" class="button orange" title="a-a-a，输入-后变为&#10;a&#10;a&#10;a">字符转行*</button></td>
+	<td><button type="button" id="pick_para" class="button blue" title="筛选包括关键词的所有段落">筛选段落*</button></td>
+	<td><button type="button" id="drop_para" class="button blue" title="删除关键词所在的段落">删除段落*</button></td>
+	</tr>
+	<tr align="center">
+	<td><button type="button" id="del_head" class="button rosy">删除段前内容</button></td>
+	<td><button type="button" id="del_mid" class="button rosy">删除段中内容</button></td>
+	<td><button type="button" id="del_tail" class="button rosy">删除段后内容</button></td>
+	<td><button type="button" id="pick_head" class="button orange" title="提取段前N个字符">提取段前内容*</button></td>
+	<td><button type="button" id="pick_mid" class="button orange" title="提取段落内字符，需输入开始到结束字符位置">提取段中内容*</button></td>
+	<td><button type="button" id="pick_tail" class="button orange" title="提取段后N个字符">提取段后内容*</button></td>	
+	<td><button type="button" id="simple" class="button blue" title="简体">转为简体</button></td>
+	<td><button type="button" id="complex" class="button blue" title="繁体">转为繁体</button></td>	
+	</tr>
+	<tr align="center">
+	<td><button type="button" id="add_head" class="button rosy">段前添加内容</button></td>
+	<td><button type="button" id="add_mid" class="button rosy">段中添加内容</button></td>
+	<td><button type="button" id="add_tail" class="button rosy">段后添加内容</button></td>	
+	<td><button type="button" id="newline_in_head" class="button orange" title="在输入的字符后面换行，如“你喜欢看《阿凡达》吗？”，输入“《”后变为&#10;你喜欢看&#10;《阿凡达》吗？">前换行*</button></td>
+	<td><button type="button" id="newline_in_tail" class="button orange" title="在输入的字符后面换行，如“你喜欢看《阿凡达》吗？”，输入“》”后变为&#10;你喜欢看《阿凡达》&#10;吗？">后换行*</button></td>
+	<td><button type="button" id="del_before" class="button blue">删除字符前</button></td>
+	<td><button type="button" id="del_after" class="button blue">删除字符后</button></td>	
+	</tr>
+
+	</table>
+	<p>★阿里云代金券礼包★<a style="color: #20B2AA;" target="_blank" href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=hr1e1dea">戳我领取</a></p><br />
+	<a style="color: #000;" href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">粤ICP备18056198号-1</a>
+</form>
+</div>
+<script type="text/javascript" src="js/wbzl.js"></script>
+
+<div id="container">
+  <div id="header"></div>
+    <div id="page" class="clearfix">
+      <div id="left"></div>
+      <div id="content"></div>
+      <div id="right"></div>
+	</div>
+  <div id="footer"></div>
+</div>
+</body>
+</html>
+
